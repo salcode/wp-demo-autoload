@@ -2,6 +2,8 @@
 
 namespace salcode\WpDemoAutoload\RestApiRoutes;
 
+error_log( 'class Owner has been loaded' );
+
 class Owner {
 	public static function register_rest_route() {
 		\register_rest_route(
