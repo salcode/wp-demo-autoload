@@ -1,0 +1,16 @@
+{
+    "name": "sal/wp-demo-autoload",
+    "description": "Demo how to autoload classes in a WordPress plugin.",
+    "license": "apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "salcode\\WpDemoAutoload\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sal Ferrarello"
+        }
+    ],
+    "require": {}
+}

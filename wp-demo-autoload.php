@@ -23,15 +23,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
 add_action(
 	'rest_api_init',
 	[ Owner::class, 'register_rest_route' ]
 );
-
-spl_autoload_register( function( $class ) {
-	switch( $class ) {
-		case 'salcode\WpDemoAutoload\RestApiRoutes\Owner':
-			require( __DIR__ . '/inc/RestApiRoutes/Owner.php' );
-			break;
-	}
-});
