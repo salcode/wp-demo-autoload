@@ -28,4 +28,10 @@ add_action(
 	[ Owner::class, 'register_rest_route' ]
 );
 
-require( __DIR__ . '/inc/RestApiRoutes/Owner.php' );
+spl_autoload_register( function( $class ) {
+	switch( $class ) {
+		case 'salcode\WpDemoAutoload\RestApiRoutes\Owner':
+			require( __DIR__ . '/inc/RestApiRoutes/Owner.php' );
+			break;
+	}
+});
